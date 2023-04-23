@@ -1,0 +1,1082 @@
+Core Java Practical
+
+
+
+Practical 1 –
+1a) Write a java program that takes a number as input and prints its multiplication table up to 10
+Code:
+import java.util.Scanner;
+class pract1aPrintTable{
+public static void main(String args[]){
+Scanner sc = new Scanner(System.in);
+System.out.println("enter any positive number : ");
+int number = sc.nextInt();
+for(int i =1; i<=10; i++){
+int cal = i * number;
+System.out.println(i+ "*" +number+ "=" +cal);
+}
+}
+}
+
+
+
+1b) Write a java program to display the following pattern
+Code:
+class pract1bPattern {
+public static void main(String args[]){
+int i, j;
+for(i = 1; i<=5; i++){
+for(j = 5; j>=i; j--){
+System.out.print(" * ");
+}
+System.out.println();
+}
+}
+}
+
+
+
+1c) Write a Java program to print the area and perimeter of a circle.
+Code:
+import java.util.Scanner;
+class pract1cAreaOfCircle{
+public static void main(String args[]){
+double r,cp,ca;
+Scanner st=new Scanner(System.in);
+System.out.print("Enter Radius of a circle Number:-");
+r=st.nextDouble();
+cp=2*3.14*r;
+ca=3.14*r*r;
+System.out.println("Perimeter="+cp);
+System.out.println("Area="+ca);
+}
+}
+Practical 2 –
+
+2a) write a java program to add two binary numbers.
+Code:
+import java.util.Scanner;
+class pract2aBinaryNumberAddition{
+public static void main(String args[]){
+Scanner sc = new Scanner(System.in);
+System.out.println("enter 1st binary number : ");
+String a = sc.nextLine();
+System.out.println("enter 2nd binary number : ");
+String b =sc.nextLine();
+int n1 = Integer.parseInt(a, 2);
+int n2 = Integer.parseInt(b, 2);
+int n3 = n1+n2;
+System.out.println("n1 :"+Integer.toBinaryString(n1));
+System.out.println("n2 :"+Integer.toBinaryString(n2));
+System.out.println("n3 = n1 + n1 : "+Integer.toBinaryString(n3));
+}
+}
+
+
+
+2b) Write a Java program to convert a decimal number to binary and vice versa.
+Code:
+import java.util.Scanner;
+class pract2bDecimaltoBinary{
+public static void main(String args[]){
+int num2;
+String num1;
+Scanner in =new Scanner(System.in);
+System.out.print("Enter binary number");
+num1=in.nextLine();
+System.out.print("Enter decimal number");
+num2=in.nextInt();
+System.out.println("Binary to Decimal:-"+Integer.parseInt(num1,2));
+System.out.println("Decimal to Binary:-"+Integer.toBinaryString(num2));
+}
+}
+Output: Enter binary number1100
+Enter decimal number25
+Binary to Decimal:-12
+Decimal to Binary:-11001
+
+
+
+
+2c) Write a Java program to reverse a string.
+Code:
+import java.util.Scanner;
+class Pract2c {
+public static void main(String args[]){
+String s,t="";
+int len,i;
+Scanner in =new Scanner(System.in);
+System.out.print("Enter a string:-");
+s=in.nextLine();
+len=s.length();
+for(i=len-1;i>=0;i--){ t=t+s.charAt(i);
+}
+System.out.println("Reverse:-"+t);
+}
+}
+Output:
+Enter a string:-JAVA
+Reverse:- AVAJ
+
+
+
+
+Practical 3 –
+
+3a) Write a Java program to count the letters, spaces, numbers and other characters of an input string.
+Code:
+import java.util.Scanner;
+class pract3aCount{
+public static void main(String args[]){
+String st;
+Scanner in =new Scanner(System.in);
+System.out.print("Enter a string:-");
+st=in.nextLine();
+count(st);
+}
+public static void count(String x){
+char[] ch=x.toCharArray();
+int I , l=0, s=0, d=0,a=0;
+for(i=0;i<x.length();i++){
+if(Character.isLetter(ch[i])){
+l++;
+}
+else if(Character.isDigit(ch[i])){
+d++;
+}
+else if(Character.isSpaceChar(ch[i])){
+s++;
+}
+else{
+a++;
+}
+}
+System.out.println("Letter:-"+l);
+System.out.println("Space:-"+s);
+System.out.println("Number:-"+d);
+System.out.println("Other:-"+a);
+}
+}
+Output:
+Enter a string:-Hello SYIT-2022-23
+Letter:-9
+Space:-1
+Number:-6
+Other:-2
+
+
+
+3b) Write a java program to calculate the sum of digits for a given car array consisting of the digits ‘0’ to ‘9’. The function should return the digit sum as a long value.
+Code:
+import java.util.*;
+class pract3bSumofdigit{
+public static void main(String args[]){
+Scanner sc = new Scanner(System.in);
+System.out.println("enter Characters : ");
+String s = sc.nextLine();
+logic obj = new logic();
+obj.data(s);
+}
+}
+class logic{
+public static void data(String str){
+int sum = 0;
+char ch[] = str.toCharArray();
+int i = 0;
+while(i<str.length()){
+int temp = sum+(ch[i] - '0');
+sum = temp;
+i++;
+}
+System.out.println("the addition is : "+sum);
+}
+}
+
+
+
+3c) Find the smallest and largest element from the array.
+Code:
+import java.util.*;
+class pract3clargestSmallestValue{
+public static void main(String args[]){
+logic obj = new logic();
+obj.values();
+}
+}
+class logic{
+public void values(){
+Scanner sc = new Scanner(System.in);
+int total, small, large;
+System.out.println("enter the size of the array : ");
+total = sc.nextInt();
+int[] arr = new int[total];
+System.out.println("enter " +total+ " number : ");
+for(int i = 0; i<total; i++){
+arr[i] = sc.nextInt();
+}
+small = 1;
+large = 0;
+for(int i=1; i<total; i++){
+if(small>arr[i]){
+small = arr[i];
+}
+else if(large<arr[i]){
+large = arr[i];
+}
+}
+System.out.println("the smallest number in this array is : "+small);
+System.out.println("the largest number in this array : "+large);
+}
+}
+
+
+Practical 4 –
+
+4a) Designed a class sortdata that contains the method asec() and desc().
+Code:
+class pract4aSortData{
+public void asec(int num1[]){
+for(int i = 0; i<num1.length; i++){
+for(int j = i+1; j<num1.length;j++){
+if(num1[i] > num1[j]){
+int temp=0;
+temp = num1[i];
+num1[i] = num1[j];
+num1[j]=temp;
+}
+}
+}
+}
+public void desc(int num2[]) {
+for (int i = 0; i < num2.length; i++) {
+for (int j = i + 1; j < num2.length; j++) {
+if (num2[i] < num2[j]) {
+int temp = 0;
+temp = num2[i];
+num2[i] = num2[j];
+num2[j] = temp;
+}
+}
+}
+}
+public void printArray1(int num1[]){
+System.out.println("\nascending order:\n");
+for(int i = 0; i<num1.length; i++){
+System.out.println(num1[i]);
+}
+}
+public void printArray2(int num2[]){
+System.out.println("\ndescending order:\n");
+for(int i = 0; i<num2.length; i++){
+System.out.println(num2[i]);
+}
+}
+public static void main(String args[]){
+int arr[] = {2,1,3,2,4};
+sortDataNew obj = new sortDataNew();
+obj.asec(arr);
+obj.printArray1(arr);
+obj.desc(arr);
+obj.printArray2(arr);
+}
+}
+
+
+
+4b) Write a java program to demonstrate the use of constructor and destructor
+Code:
+class employee{
+int empid;
+String empname;
+public employee(int id, String name){
+this.empid = id;
+this.empname = name;
+}
+public void info(){
+System.out.println("employee id : "+empid+" employee name : "+empname);
+}
+}
+public class constructorprogram{
+public static void main(String args[]){
+employee obj1 = new employee(1,"abc");
+employee obj2 = new employee(2,"xyz");
+obj1.info();
+obj2.info();
+}
+}
+
+
+4c) Write a java program to demonstrate the use of constructor and destructor
+Code:
+abstract class virtualAssistant{
+public abstract void android();
+public abstract void ios();
+public void windows(){
+System.out.println("windows: working....");
+}
+}
+abstract class app1 extends virtualAssistant{
+public void android(){
+System.out.println("android: working....");
+}
+}
+class app2 extends app1{
+public void ios(){
+System.out.println("ios: not working....");
+}
+}
+class pract4cAbstract{
+public static void main(String args[]){
+app2 obj = new app2();
+obj.android();
+obj.ios();
+obj.windows();
+}
+}
+
+
+Practical 5 –
+
+5a) write a java program to implement single level inheritance.
+Code:
+class parent{
+int money = 2300;
+String car = "BMW";
+String house = "Malad";
+public void show(){
+System.out.println(money+ " : "+car+" : "+house);
+}
+}
+class child extends parent{
+public void phone(){
+System.out.println("Samsusng galaxy s8");
+}
+}
+class child2 extends child{
+public void laptop(){
+System.out.println("vivo book");
+}
+}
+class inheritance{
+public static void main(String[] args){
+child2 c2 = new child2();
+c2.show();
+c2.phone();
+c2.laptop ();
+}
+}
+
+
+
+
+
+5b) Write a java program to implement method overriding
+Code:
+class pract5bMethodOverriding{
+public static void main(String args[]){
+B obj = new B();
+obj.phone();
+obj.price();
+}
+}
+class A{
+public void phone(){
+System.out.println("Samsusng galaxy m51. ");
+}
+}
+class B extends A{
+public void price(){
+System.out.println("price is 25000rs.");
+}
+public void phone(){
+System.out.println("20% discount on 2 phones.");
+}
+}
+
+
+
+
+5c) Write a java program to implement multiple inheritance.
+Code:
+interface salesman{
+void price(int a);
+void product(String a);
+void quality(String a);
+}
+class customer implements salesman{
+String productQuality;
+String productName;
+int productPrice;
+//@Override
+public void price(int productPrice1){
+int productPrice = productPrice1;
+System.out.println("the price of the product is "+productPrice);
+}
+//@Override
+public void product(String productName1){
+String productName = productName1;
+System.out.println("the name of the product is "+productName1);
+}
+//@Override
+public void quality(String productQuality1){
+String productQuality = productQuality1;
+System.out.println("the quality of the product is "+productQuality1);
+}
+}
+class business{
+public static void main(String[] args){
+customer obj= new customer();
+obj.price(250);
+obj.product("phone cover");
+obj.quality("overall good");
+}
+}
+
+
+
+Practical 6 –
+
+6a) create package, add the necessary classes and import the package in java class.
+Code:
+// Creation of package…..
+package mypack;
+public class adding{
+public void addition(){
+int a = 10;
+int b = 20;
+System.out.println(a+b);
+}
+}
+// for compiling package file, we need to run this command on cmd window.
+// javac -d . adding.java
+// importing the package which we have created.
+import mypack.adding;
+public class additionsumof{
+public static void main(String args[]){
+adding obj = new adding();
+obj.addition();
+}
+}
+// now compile your this java file. You will get output after this. Run the program.
+// javac additionsumof.java
+// java additionsumof
+Output:
+30
+
+
+
+6b) Write a java program to add two matrices and print the resultant matrix.
+Code:
+import java.util.*;
+class pract6b1
+{
+public static void main(String args[])
+{
+int r1, r2,c1,c2,i,j;
+Scanner in = new Scanner(System.in);
+System.out.print("Enter row size of matrix1: ");
+r1 = in.nextInt();
+System.out.print("Enter col size of matrix1: ");
+c1 = in.nextInt();
+System.out.print("Enter row size of matrix2: ");
+r2 = in.nextInt();
+System.out.print("Enter col size of matrix2: ");
+c2 = in.nextInt();
+if(c1==r2)
+{
+int mat1[][] = new int[r1][c1];
+int mat2[][] = new int[r2][c2];
+int res[][] = new int[r1][c2];
+System.out.println("enter elements of matrix1");
+for ( i= 0 ; i < r1 ; i++ )
+{
+for ( j= 0 ; j < c1 ;j++ )
+mat1[i][j] = in.nextInt();
+}
+System.out.println("enter elements of matrix2");
+for ( i= 0 ; i < r2 ; i++ )
+{
+for ( j= 0 ; j < c2 ;j++ )
+mat2[i][j] = in.nextInt();
+}
+System.out.println("\nResult :-");
+for ( i= 0 ; i < r1 ; i++ )
+{
+for ( j= 0 ; j <c2;j++)
+{
+res[i][j] +=mat1[i][j]+mat2[i][j] ;
+}
+}
+for ( i= 0 ; i < r1; i++ )
+{
+for ( j=0 ; j < c2;j++ ){
+System.out.print(res[i][j]+" ");
+}
+System.out.println();
+}
+}
+else{
+System.out.print("it does not exists");
+}
+}
+}
+Output:
+Enter row size of matrix1: 3
+Enter col size of matrix1: 3
+Enter row size of matrix2: 3
+Enter col size of matrix2: 3
+enter elements of matrix1
+4 5 8
+4 5 5
+4 5 4
+enter elements of matrix2
+4 5 8
+4 8 7
+4 5 8
+Result :-
+8 10 16
+8 13 12
+8 10 12
+
+
+
+
+
+6c) Write a java program for multiplying two matrices and point the product for the same.
+Code:
+import java.util.*;
+class pract6c
+{
+public static void main(String args[])
+{
+int r1, r2,c1,c2,i,j,k,sum;
+Scanner in = new Scanner(System.in);
+System.out.println("Enter row size of matrix1");
+r1 = in.nextInt();
+System.out.println("Enter col size of matrix1");
+c1 = in.nextInt();
+System.out.println("Enter row size of matrix2");
+r2 = in.nextInt();
+System.out.println("Enter col size of matrix2");
+c2 = in.nextInt();
+if(c1==r2)
+{
+int mat1[][] = new int[r1][c1];
+int mat2[][] = new int[r2][c2];
+int res[][] = new int[r1][c2];
+System.out.println("enter elements of matrix1");
+for ( i= 0 ; i < r1 ; i++ )
+{
+for ( j= 0 ; j < c1 ;j++ )
+mat1[i][j] = in.nextInt();
+}
+System.out.println("enter elements of matrix2");
+for ( i= 0 ; i < r2 ; i++ )
+{
+for ( j= 0 ; j < c2 ;j++ )
+mat2[i][j] = in.nextInt();
+}
+System.out.println("\n\nResult :-");
+for ( i= 0 ; i < r1 ; i++ )
+{
+for ( j= 0 ; j <c2;j++)
+{
+sum=0;
+for ( k= 0 ; k <r2;k++ )
+{
+sum +=mat1[i][k]*mat2[k][j] ;
+}
+res[i][j]=sum;
+}
+}
+for ( i= 0 ; i < r1; i++ )
+{
+for ( j=0 ; j < c2;j++ ){
+System.out.print(res[i][j]+" ");
+}
+System.out.println();
+}
+}
+else{
+System.out.print("it does not exists");
+}
+}
+}
+Output:
+Enter row size of matrix1: 2
+Enter col size of matrix1: 2
+Enter row size of matrix2: 2
+Enter col size of matrix2: 2
+enter elements of matrix1
+5 4
+4 5
+enter elements of matrix2
+4 5
+4 5
+Result :-
+36 45
+36 45
+Practical 7 –
+7a) Write a java program to implement the vectors
+Code:
+import java.util.Vector;
+class vectors{
+public static void main(String args[]){
+Vector<String> v = new Vector<String>();
+if(v.isEmpty()){
+v.add("apple");
+v.add("mango");
+v.add("orange");
+v.add("apple");
+v.add("apple");
+v.add(0,"apple");
+v.add(1,"mango");
+System.out.println("elements from 3rd position: "+v.get(3));
+System.out.println("elements from 1st position: "+v.firstElement());
+System.out.println("elements from last position: "+v.lastElement());
+System.out.println("elements remove from 4th position: "+v.remove(3));
+System.out.println("data added successfully ! ");
+}
+else{
+System.out.println("elements does not exists ! ");
+}
+System.out.println("Vector is empty : "+v.isEmpty());
+System.out.println("printing Vector elements: ");
+for(String data:v){
+System.out.println(data);
+}
+}
+}
+Output:
+elements from 3rd position: mango
+elements from 1st position: apple
+elements from last position: apple
+elements remove from 4th position: mango
+data added successfully !
+Vector is empty : false
+printing Vector elements:
+apple
+mango
+apple
+orange
+apple
+apple
+7b) Write a java program to implement thread life cycle
+Code:
+import java.lang.*;
+class mythread extends Thread{
+public void run(){
+for(int i = 0; i<10; i++){
+System.out.println(i);
+}
+}
+}
+public class MythreadProgram{
+public static void main(String args[]){
+mythread obj = new mythread();
+Thread t = new Thread(obj);
+t.start();
+}
+}
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+7c) Write a java program to implement multithreading
+Code:
+import java.lang.*;
+class Add {
+int count;
+public synchronized void increment(){
+count++;
+System.out.println(count);
+}
+}
+class practical7cMultithread extends Thread{
+public static void main(String args[]) throws InterruptedException{
+Add obj=new Add();
+Thread t1=new Thread(new Runnable(){
+public void run(){
+for(int i=0;i<=5;i++){
+obj.increment();
+}
+}
+});
+t1.start();
+try{
+Thread.sleep(5000);
+}
+catch(InterruptedException e){
+e.printStackTrace();
+}
+Thread t2=new Thread(new Runnable(){
+public void run(){
+for(int i=0;i<=5;i++){
+obj.increment();
+}
+}
+});
+t2.start();
+try{
+Thread.sleep(5000);
+}
+catch(InterruptedException e){
+e.printStackTrace();
+}
+synchronized(obj){
+obj.notifyAll();
+}
+}
+}
+Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+Practical 8 –
+8a) Write a java program to open a file and display the contents in the console window.
+Code:
+import java.io.*;
+class pract8Afilehandleing{
+public static void main(String args[]) throws FileNotFoundException, IOException{
+InputStream is = new FileInputStream("D:\\core java\\demo.txt");
+DataInputStream dis = new DataInputStream(is);
+int count = is.available();
+byte a[] = new byte[count];
+is.read(a);
+for(byte b:a){
+char k = (char)b;
+System.out.print(k+"");
+}
+}
+}
+8b) write a java program to copy the content from one file to another file.
+Code:
+import java.io.*;
+class pract8Bcopydata{
+public static void main(String args[]){
+FileInputStream fis = null;
+FileOutputStream fos = null;
+try{
+File inf =new File("D:\\core java\\demo1.txt");
+File outf =new File("D:\\core java\\demo2.txt");
+fis = new FileInputStream(inf);
+fos = new FileOutputStream(outf);
+byte buff[] = new byte[1024];
+int length;
+while((length=fis.read(buff))>0){
+fos.write(buff, 0,length);
+}
+fis.close();
+fos.close();
+System.out.println("content copied.");
+}
+catch(Exception e){
+e.printStackTrace();
+}
+}
+}
+8c) write a java program to read data from user and store it in the file.
+Code:
+import java.util.*;
+import java.io.*;
+class pract8Creadfiledata{
+public static void main(String args[]) throws FileNotFoundException, IOException{
+String s1,s2,s3;
+Scanner sc = new Scanner(System.in);
+System.out.println("enter your name: ");
+s1 = sc.nextLine();
+System.out.println("enter your phone number : ");
+s2 = sc.nextLine();
+System.out.println("enter your address : ");
+s3 = sc.nextLine();
+FileOutputStream fos = new FileOutputStream("D:\\core java\\user data.txt");
+byte b1[] = s1.getBytes();
+fos.write(b1);
+byte b2[] = s2.getBytes();
+fos.write(b2);
+byte b3[] = s3.getBytes();
+fos.write(b3);
+fos.close();
+System.out.println("file created ");
+}
+}
+Practical 9 –
+9a) Design a AWT program to print the factorial for an input value.
+Code:
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+class factorialGui extends Frame implements ActionListener{
+Label l1, l2;
+Button b1, b2;
+TextField t1;
+public factorialGui(){
+l1 = new Label("Num :");
+b1 = new Button("Calculate ");
+b2 = new Button("Clear ");
+t1 = new TextField(20);
+l2 = new Label(" ");
+b1.addActionListener(this);
+b2.addActionListener(this);
+setLayout(new FlowLayout(FlowLayout.CENTER));
+add(l1);
+add(t1);
+add(b1);
+add(b2);
+setSize(200,200);
+setVisible(true);
+add(l2);
+}
+public void actionPerformed(ActionEvent e){
+if(e.getSource() == b1){
+int a = Integer.parseInt(t1.getText());
+l2.setText("factorial = "+getFact(a));
+}
+else if(e.getSource() == b2){
+l2.setText(" ");
+}
+}
+public int getFact(int a){
+int count = 1;
+for(int i = 1; i<=a; i++){
+count = count*i;
+}
+return count;
+}
+public static void main(String args[]){
+new factorialGui();
+}
+}
+9b) Design an AWT program to perform various string operations like reverse string and string concatenation.
+Code:
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+class reverseConcate extends Frame implements ActionListener{
+Label l1, l2, l3, l4;
+Button b1, b2, b3;
+TextField t1, t2;
+public reverseConcate(){
+l1 = new Label("Character1 :");
+l2 = new Label("Character2 :");
+b1 = new Button("Concate ");
+b2 = new Button("Reverse ");
+b3 = new Button("Clear ");
+t1 = new TextField(20);
+t2 = new TextField(20);
+l4 = new Label(" ");
+l3 = new Label(" ");
+b1.addActionListener(this);
+b2.addActionListener(this);
+b3.addActionListener(this);
+setLayout(new FlowLayout(FlowLayout.CENTER));
+add(l1);
+add(t1);
+add(l2);
+add(t2);
+add(b1);
+add(b2);
+add(b3);
+setSize(200,200);
+setVisible(true);
+add(l3);
+add(l4);
+}
+public void actionPerformed(ActionEvent e){
+if(e.getSource() == b1){
+String a = t1.getText().toString().trim();
+String b = t2.getText().toString().trim();
+l3.setText("\nconcate = "+(a+b));
+}
+else if(e.getSource() == b2){
+String a = t1.getText().toString();
+l4.setText("\nreversed of first Character = "+getReverse(a));
+}
+else if(e.getSource() == b3){
+l3.setText(" ");
+}
+}
+public String getReverse(String len){
+char Character = 1;
+String reversed = "";
+int len1 = len.length();
+for(int i = 0; i<len1; i++){
+Character = len.charAt(i);
+reversed = Character+reversed;
+}
+return reversed;
+}
+public static void main(String args[]){
+new reverseConcate();
+}
+}
+9c) write a java program to implement exception handling
+Code:
+class pract9cexception{
+public static void main(String args[]){
+int a[] = {5,10};
+int b = 5;
+try{
+int x = a[2]/(b-a[0]);
+}catch(ArithmeticException e){ // it will handle
+System.out.println("divide by zero");
+}catch(ArrayIndexOutOfBoundsException e){
+System.out.println("index out of bound");
+}
+finally{
+int y = a[1]/a[0];
+System.out.println("result : "+y);
+}
+}
+}
+Output:
+index out of bound
+result : 2
+Practical 10 –
+10a) Design an AWT application that contains the interface to add student information and display the same.
+Code:
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+public class pract10a extends Frame implements ActionListener{
+Label l1,l2,l3,l4,l5;
+Button b1, b2;
+TextField t1,t2,t3;
+public pract10a(){
+l1=new Label("Name");
+l2=new Label("Phone");
+l3=new Label("Address");
+l4=new Label("Result");
+l5=new Label(" ");
+t1=new TextField(10);
+t2=new TextField(10);
+t3=new TextField(10);
+b1=new Button("Submit");
+b2=new Button("Clear");
+setLayout(new GridLayout(5,2));
+add(l1);add(t1);
+add(l2);add(t2);
+add(l3);add(t3);
+add(b1); add(b2);
+add(l4);add(l5);
+b1.addActionListener(this);
+b2.addActionListener(this);
+setSize(400,400);
+setVisible(true);
+}
+@Override
+public void actionPerformed(ActionEvent e){
+if(e.getSource()==b1){
+String data="Student name: "+t1.getText();
+l4.setText(data);
+String data1="Phone:"+t2.getText()+"Address: "+t3.getText();
+l5.setText(data1);
+t1.setText(" ");
+t2.setText(" ");
+t3.setText(" ");
+}else{
+t1.setText(" ");
+t2.setText(" ");
+t3.setText(" ");
+l4.setText(" ");
+l5.setText(" ");
+}
+}
+public static void main(String args[]){
+new pract10a();
+}
+}
+Output:
+10b) Design a calculator based on awt application.
+Code:
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+class Calculator extends Frame implements ActionListener{
+Label l1, l2, l3, l4;
+Button b1, b2, b3, b4, b5;
+TextField t1, t2, t3;
+public Calculator(){
+l1 = new Label("Num 1:");
+l3 = new Label("Num 2:");
+b1 = new Button("+");
+b3 = new Button("-");
+b4 = new Button("*");
+b5 = new Button("/");
+b2 = new Button("Clear ");
+t1 = new TextField(20);
+t2 = new TextField(20);
+l2 = new Label(" ");
+l4 = new Label("Result");
+t3 = new TextField(20);
+b1.addActionListener(this);
+b2.addActionListener(this);
+b3.addActionListener(this);
+b4.addActionListener(this);
+b5.addActionListener(this);
+setLayout(new FlowLayout(FlowLayout.CENTER));
+add(l1);
+add(t1);
+add(l3);
+add(t2);
+add(l4);
+add(t3);
+setSize(200,200);
+setVisible(true);
+add(b1);
+add(b2);
+add(b3);
+add(b4);
+add(b5);
+add(l2);
+}
+public void actionPerformed(ActionEvent e){
+if(e.getSource() == b1){
+int a = Integer.parseInt(t1.getText());
+int b = Integer.parseInt(t2.getText());
+t3.setText(String.valueOf(a+b));
+}
+if(e.getSource() == b4){
+int a = Integer.parseInt(t1.getText());
+int b = Integer.parseInt(t2.getText());
+t3.setText(String.valueOf(a*b));
+}
+if(e.getSource() == b5){
+int a = Integer.parseInt(t1.getText());
+int b = Integer.parseInt(t2.getText());
+t3.setText(String.valueOf(a/b));
+}
+if(e.getSource() == b3){
+int a = Integer.parseInt(t1.getText());
+int b = Integer.parseInt(t2.getText());
+t3.setText(String.valueOf(a-b));
+}
+else if(e.getSource() == b2){
+t3.setText(" ");
+t1.setText(" ");
+t2.setText(" ");
+}
+}
+public static void main(String args[]){
+new Calculator();
+}
+}
+Output:
+10c) Design an AWT application to generate result marks sheet
+Code:
